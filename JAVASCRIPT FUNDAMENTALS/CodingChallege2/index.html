@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // Store Mark's and John's mass and height in variables
+        let markMassKg = 78;
+        let markHeightM = 1.69;
+
+        let johnMassKg = 92;
+        let johnHeightM = 1.95;
+
+
+        let markBMI = markMassKg / (markHeightM ** 2);
+        let johnBMI = johnMassKg / (johnHeightM ** 2);
+
+        // Determine who has the higher BMI
+        let higherBMIName = "";
+        if (markBMI > johnBMI) {
+            higherBMIName = "Mark";
+        } else if (johnBMI > markBMI) {
+            higherBMIName = "John";
+        } else {
+            higherBMIName = "Mark and John";
+        }
+
+        // Print 
+        console.log(`${higherBMIName}'s BMI (${markBMI.toFixed(1)}) is higher than ${higherBMIName === "Mark" ? "John's" : "Mark's"} (${johnBMI.toFixed(1)})!`);
+    </script>
+</body>
+
+</html>

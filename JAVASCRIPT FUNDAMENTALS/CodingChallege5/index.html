@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 1. Create an arrow function 'calcAverage' to calculate the average of 3 scores
+        const calcAverage = (score1, score2, score3) => (score1 + score2 + score3) / 3;
+
+        // 2. Use the function to calculate the average for both teams
+        const dolphinsAverage = calcAverage(44, 23, 71);
+        const koalasAverage = calcAverage(65, 54, 49);
+
+        // 3. Create a function 'checkWinner' to determine the winner and log the result
+        const checkWinner = (avgDolphins, avgKoalas) => {
+            if (avgDolphins >= 2 * avgKoalas) {
+                console.log(`Dolphins win (${avgDolphins} vs. ${avgKoalas})`);
+            } else if (avgKoalas >= 2 * avgDolphins) {
+                console.log(`Koalas win (${avgKoalas} vs. ${avgDolphins})`);
+            } else {
+                console.log("No team wins.");
+            }
+        };
+
+        // 4. Use the 'checkWinner' function to determine the winner for both Data 1 and Data 2
+        console.log("Data 1 Results:");
+        checkWinner(dolphinsAverage, koalasAverage);
+
+        const dolphinsAverage2 = calcAverage(85, 54, 41);
+        const koalasAverage2 = calcAverage(23, 34, 27);
+
+        console.log("\nData 2 Results:");
+        checkWinner(dolphinsAverage2, koalasAverage2);
+    </script>
+</body>
+
+</html>

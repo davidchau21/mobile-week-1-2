@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 1. Write a function 'calcTip' to calculate the tip based on the rules
+        const calcTip = (bill) => {
+            return bill >= 50 && bill <= 300 ? bill * 0.15 : bill * 0.2;
+        };
+
+        // Test the 'calcTip' function with a bill value of 100
+        const testBill = 100;
+        const tipAmount = calcTip(testBill);
+        console.log(`The tip for a bill of $${testBill} is $${tipAmount}`);
+
+        // 2. Create an array 'bills' containing the test data
+        const bills = [125, 555, 44];
+
+        // 3. Create an array 'tips' containing the tip value for each bill
+        const tips = bills.map((bill) => calcTip(bill));
+
+        // 4. Bonus: Create an array 'total' containing the total values (bill + tip)
+        const total = bills.map((bill, index) => bill + tips[index]);
+
+        // Display the 'tips' and 'total' arrays
+        console.log("Tips:", tips);
+        console.log("Total values:", total);
+    </script>
+</body>
+
+</html>

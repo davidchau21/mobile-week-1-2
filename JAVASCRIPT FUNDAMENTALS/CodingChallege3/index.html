@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // Test data
+        const dolphinsScores = [96, 108, 89];
+        const koalasScores = [88, 91, 110];
+
+        // Calculate the average score for each team
+        const calculateAverage = (scores) => {
+            const total = scores.reduce((acc, score) => acc + score, 0);
+            return total / scores.length;
+        };
+
+        const dolphinsAverage = calculateAverage(dolphinsScores);
+        const koalasAverage = calculateAverage(koalasScores);
+
+        // Check for a draw and the bonus requirements
+        if (dolphinsAverage >= 100 && koalasAverage >= 100) {
+            if (dolphinsAverage > koalasAverage) {
+                console.log(`Dolphins win with an average score of ${dolphinsAverage}`);
+            } else if (koalasAverage > dolphinsAverage) {
+                console.log(`Koalas win with an average score of ${koalasAverage}`);
+            } else {
+                console.log(`It's a draw with an average score of ${dolphinsAverage}`);
+            }
+        } else {
+            console.log("No team wins the trophy due to the minimum score requirement.");
+        }
+    </script>
+</body>
+
+</html>
